@@ -267,51 +267,6 @@ function removeBridgesIgnoringLeaveMessages(ctx, next) {
 }
 
 /**
- * Replies to the message telling the user this is a private bot if there are no bridges on the tediCross context
- *
- * @param {Object} ctx	The Telegraf context
- * @param {Function} ctx.reply	The context's reply function
- * @param {Function} next	Function to pass control to next middleware
- *
- * @returns {undefined}
- */
-function informThisIsPrivateBot(ctx, next) {
-	R.ifElse(
-		// If there are no bridges
-		R.compose(R.isEmpty, R.path(["tediCross", "bridges"])),
-		// Inform the user, if enough time has passed since last time
-		R.when(
-			// When there is no timer for the chat in the anti spam map
-			ctx => R.not(ctx.TediCross.antiInfoSpamSet.has(ctx.message.chat.id)),
-			// Inform the chat this is an instance of TediCross
-			ctx => {
-				// Update the anti spam set
-				ctx.TediCross.antiInfoSpamSet.add(ctx.message.chat.id);
-
-				// Send the reply
-				ctx.reply(
-					"This is an instance of a [TediCross](https://github.com/TediCross/TediCross) bot, " +
-						"bridging a chat in Telegram with one in Discord. " +
-						"If you wish to use TediCross yourself, please download and create an instance.",
-					{
-						parse_mode: "markdown"
-					}
-				).then(msg =>
-					// Delete it again after a while
-					sleepOneMinute()
-						.then(() => helpers.deleteMessage(ctx, msg))
-						.catch(helpers.ignoreAlreadyDeletedError)
-						// Remove it from the anti spam set again
-						.then(() => ctx.TediCross.antiInfoSpamSet.delete(ctx.message.chat.id))
-				);
-			}
-		),
-		// Otherwise go to next middleware
-		next
-	)(ctx);
-}
-
-/**
  * Adds a `from` object to the tediCross context
  *
  * @param {Object} ctx	The context to add the property to
@@ -648,7 +603,6 @@ module.exports = {
 	removeBridgesIgnoringCommands,
 	removeBridgesIgnoringJoinMessages,
 	removeBridgesIgnoringLeaveMessages,
-	informThisIsPrivateBot,
 	addFromObj,
 	addReplyObj,
 	addForwardFrom,

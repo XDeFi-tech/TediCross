@@ -83,7 +83,6 @@ function setup(logger, tgBot, dcBot, messageMap, bridgeMap, settings) {
 			tgBot.use(middlewares.addMessageId);
 			tgBot.command("chatinfo", endwares.chatinfo);
 			tgBot.use(middlewares.addBridgesToContext);
-			tgBot.use(middlewares.informThisIsPrivateBot);
 			tgBot.use(middlewares.removeD2TBridges);
 			tgBot.command(middlewares.removeBridgesIgnoringCommands);
 			tgBot.on("new_chat_members", middlewares.removeBridgesIgnoringJoinMessages);
