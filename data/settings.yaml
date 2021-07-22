@@ -1,0 +1,104 @@
+telegram:
+  token: env      # Telegram bot tokens look like this: 113031530:AAH_4c5Gt9gsVu82OVNjUV7poU7PodYiNsA
+  useFirstNameInsteadOfUsername: false
+  colonAfterSenderName: false
+  skipOldMessages: true
+  sendEmojiWithStickers: true
+discord:
+  useNickname: false
+  token: env       # Discord bot tokens look like this: MjI3MDA1NzIvOBQ2MzAzMiMz.DRf-aw.N0MVYtDxXYPSQew4g2TPqvQve2c
+  skipOldMessages: true
+  replyLength: 100
+  maxReplyLines: 2
+bridges:
+  - name: Bridge FR
+    direction: both
+    telegram:
+      chatId: -1001185760350  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '834400018529255464'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+  - name: Bridge VIET
+    direction: both
+    telegram:
+      chatId: -1001395687967  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '834408611689267300'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+  - name: Bridge CHINA
+    direction: both
+    telegram:
+      chatId: -1001220272717  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '834408150920069180'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+  - name: Bridge SPAIN
+    direction: both
+    telegram:
+      chatId: -1001271351836  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '834407634026758164'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+  - name: Bridge Portugal
+    direction: both
+    telegram:
+      chatId: -1001535596072  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '844983216121446451'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+  - name: Bridge Turkey
+    direction: both
+    telegram:
+      chatId: -1001560399694  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      relayCommands: true
+      crossDeleteOnDiscord: true
+    discord:
+      channelId: '864516819624263700'       # This ID must be wrapped in single quotes. Example: '244791815503347712'
+      relayJoinMessages: true
+      relayLeaveMessages: true
+      sendUsernames: true
+      crossDeleteOnTelegram: true
+debug: false

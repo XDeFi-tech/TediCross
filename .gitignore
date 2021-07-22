@@ -42,8 +42,5 @@ jspm_packages
 # Project settings
 .env
 
-# Everything in the data directory
-data/
-
 # The npm package lock file
 package-lock.json
