@@ -86,7 +86,7 @@ bridges:
       relayLeaveMessages: true
       sendUsernames: true
       crossDeleteOnTelegram: true
-  - name: Bridge Turkey
+  - name: Bridge Tk
     direction: both
     telegram:
       chatId: -1001560399694  # Remember that Telegram group and channel IDs are negative. Include the `-` if you are bridging a group or a channel
